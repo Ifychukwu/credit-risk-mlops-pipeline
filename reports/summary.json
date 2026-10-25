@@ -1,0 +1,23 @@
+{
+  "counterfactual_last_10_days": {
+    "evaluation_days": [
+      "2026-02-23",
+      "2026-03-05"
+    ],
+    "frozen_model_v3_auroc": 0.6308,
+    "pipeline_model_v9_auroc": 0.7265
+  },
+  "days": 60,
+  "quarantined_batches": 2,
+  "retraining_runs": 9,
+  "promoted": 6,
+  "rejected": 3,
+  "retrain_reasons": {
+    "performance drop": 3,
+    "data drift": 3,
+    "initial model": 1,
+    "scheduled refresh": 1,
+    "performance below floor": 1
+  },
+  "production_version": 9
+}

@@ -1,0 +1,13 @@
+numpy>=1.26
+pandas>=2.1
+scikit-learn>=1.4
+matplotlib>=3.8
+joblib>=1.3
+streamlit>=1.35
+fastapi>=0.110
+uvicorn[standard]>=0.29
+pydantic>=2.6
+httpx>=0.27
+pytest>=8.0
+# Orchestration (optional locally; provided by the Airflow container in docker-compose.yaml)
+# apache-airflow>=2.9

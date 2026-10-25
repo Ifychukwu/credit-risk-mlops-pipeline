@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "stage": "Staging",
+  "registered_at": "2026-10-06T22:53:02+00:00",
+  "trained_on": "2026-01-14",
+  "reason": "performance drop: live AUROC 0.655 vs 0.703",
+  "metrics": {
+    "auroc": 0.677,
+    "pr_auc": 0.2355,
+    "brier": 0.1014,
+    "ks": 0.2653,
+    "default_rate": 0.1179,
+    "n": 2400
+  },
+  "params": {
+    "learning_rate": 0.05,
+    "max_iter": 300,
+    "max_leaf_nodes": 15,
+    "l2_regularization": 1.0
+  },
+  "data_fingerprint": "9450b63deb97c64e",
+  "train_rows": 8000,
+  "train_period": [
+    "2026-01-05",
+    "2026-01-14"
+  ]
+}

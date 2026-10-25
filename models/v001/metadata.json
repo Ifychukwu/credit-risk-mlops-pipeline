@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "stage": "Staging",
+  "registered_at": "2026-10-06T22:53:00+00:00",
+  "trained_on": "2026-01-11",
+  "reason": "initial model",
+  "metrics": {
+    "auroc": 0.7025,
+    "pr_auc": 0.2395,
+    "brier": 0.0952,
+    "ks": 0.2866,
+    "default_rate": 0.11,
+    "n": 2400
+  },
+  "params": {
+    "learning_rate": 0.05,
+    "max_iter": 300,
+    "max_leaf_nodes": 15,
+    "l2_regularization": 1.0
+  },
+  "data_fingerprint": "a62097c5ee6ce8c2",
+  "train_rows": 5600,
+  "train_period": [
+    "2026-01-05",
+    "2026-01-11"
+  ]
+}

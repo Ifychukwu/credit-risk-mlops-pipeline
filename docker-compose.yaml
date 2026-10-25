@@ -1,0 +1,33 @@
+# Minimal local Airflow for this project (standalone mode: webserver + scheduler + SQLite).
+# Usage:  docker compose up      then open http://localhost:8080  (user: admin, password printed in the logs)
+services:
+  airflow:
+    image: apache/airflow:2.10.3-python3.11
+    command: standalone
+    ports:
+      - "8080:8080"
+    environment:
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      PYTHONPATH: /opt/airflow/project/src
+      PIPELINE_ROOT: /opt/airflow/project
+      _PIP_ADDITIONAL_REQUIREMENTS: "scikit-learn>=1.4 pandas>=2.1 joblib"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./:/opt/airflow/project
+
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models
+    command: uvicorn pipeline.serve:app --host 0.0.0.0 --port 8000 --app-dir src
+
+  dashboard:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+    command: streamlit run app.py --server.port 8501 --server.address 0.0.0.0
